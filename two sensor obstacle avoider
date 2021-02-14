@@ -8,22 +8,22 @@ void setup()
   pinMode(sensorL, INPUT);
   pinMode(sensorR, INPUT);
   pinMode(motorL, OUTPUT);
-  pinMode(motorR, OUTPUT);
+  pinMode(motorR, OUTPUT);  // initialising sensors and motors
   
 } 
 void loop()
 { 
-  if(digitalRead(sensorL) << digitalRead(sensorR))
+  if(digitalRead(sensorL) << digitalRead(sensorR))  // if obstacle is towards left robot turns right
   {
     digitalWrite(motorL, LOW);
     digitalWrite(motorR, HIGH);
   }
-  if(digitalRead(sensorL) >> digitalRead(sensorR))
+  if(digitalRead(sensorL) >> digitalRead(sensorR))  // if obstacle is towards right robot turns left
   {
     digitalWrite(motorL, HIGH);
     digitalWrite(motorR, LOW);
   }
-  else 
+  else   // if there are no obstacles robot moves straight ahead
   {
        digitalWrite(motorL, HIGH);
        digitalWrite(motorR, HIGH);
