@@ -1,0 +1,32 @@
+int motorL = 13;
+int motorR = 11;
+int sensorL = 3;
+int sensorR = 6;
+
+void setup()
+{
+  pinMode(sensorL, INPUT);
+  pinMode(sensorR, INPUT);
+  pinMode(motorL, OUTPUT);
+  pinMode(motorR, OUTPUT);
+  
+} 
+void loop()
+{ 
+  if(digitalRead(sensorL) << digitalRead(sensorR))
+  {
+    digitalWrite(motorL, LOW);
+    digitalWrite(motorR, HIGH);
+  }
+  if(digitalRead(sensorL) >> digitalRead(sensorR))
+  {
+    digitalWrite(motorL, HIGH);
+    digitalWrite(motorR, LOW);
+  }
+  else 
+  {
+       digitalWrite(motorL, HIGH);
+       digitalWrite(motorR, HIGH);
+  }
+
+}
