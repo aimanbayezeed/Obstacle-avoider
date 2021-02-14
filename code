@@ -1,0 +1,26 @@
+int motorL = 13;
+int motorR = 11;
+int sensor = 3;
+
+void setup()
+{
+  pinMode(sensor, INPUT);  // initialising sensor as input
+  pinMode(motorL, OUTPUT);
+  pinMode(motorR, OUTPUT); // initialising motors as the outputs
+  
+} 
+void loop()
+{
+   
+  if(digitalRead(sensor) == HIGH)  // check is sensor is high or obstacle in front
+  {
+    digitalWrite(motorL, HIGH);
+    digitalWrite(motorR, LOW);  // moves the robot away from obstacle 
+  }
+  else 
+  {
+       digitalWrite(motorL, HIGH);
+       digitalWrite(motorR, HIGH); // in absence of obstacle it moves straight ahead
+  }
+
+}
